@@ -21,7 +21,28 @@ if(NOT sfml_POPULATED)
     add_subdirectory(${sfml_SOURCE_DIR} ${sfml_BINARY_DIR})
 endif()
 
-add_executable(p_engine_2D src/main.cpp)
+add_executable(p_engine_2D src/main.cpp
+        src/utils/pmath.cpp
+        src/utils/pmath.h
+        src/models/Vect2.cpp
+        src/models/Vect2.h
+        src/utils/prand.cpp
+        src/utils/prand.h
+        src/models/bodies/Bodie.cpp
+        src/models/bodies/Bodie.h
+        src/utils/enums.h
+        src/models/bodies/Sphere.cpp
+        src/models/bodies/Sphere.h
+        src/logic/Drawer.cpp
+        src/logic/Drawer.h
+        src/logic/Engine.cpp
+        src/logic/Engine.h
+        src/logic/Collider.cpp
+        src/logic/Collider.h
+        src/models/CollitionProps.h
+        src/logic/AppLoop.cpp
+        src/logic/AppLoop.h
+)
 target_link_libraries(p_engine_2D PRIVATE sfml-graphics sfml-system sfml-window)
 
 if (WIN32 AND BUILD_SHARED_LIBS)
